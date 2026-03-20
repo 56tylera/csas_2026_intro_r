@@ -17,3 +17,12 @@ and [Positron](https://positron.posit.co/download.html)
 
 - No experience needed
 
+## Outline
+
+- Why R?
+
+- R Syntax
+
+- Data structure
+
+- Practical R uses
