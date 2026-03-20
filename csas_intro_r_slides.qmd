@@ -26,3 +26,13 @@ and [Positron](https://positron.posit.co/download.html)
 - Data structure
 
 - Practical R uses
+
+## Why R?
+
+- Runs on all major operating systems
+
+- Open source
+
+- Intuitive syntax
+
+- User-created packages constantly provide new features
