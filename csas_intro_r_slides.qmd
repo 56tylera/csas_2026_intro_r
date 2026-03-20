@@ -1,0 +1,10 @@
+---
+title: "Intro to R"
+subtitle: "CSAS 2026"
+author: "Tyler Adams"
+format:
+    revealjs:
+        slide-number: true
+        preview-links: true
+        theme: default
+---
