@@ -49,3 +49,20 @@ by posit
   - Variables
   - Console
   - Plots
+
+## R syntax
+
+- Type code into Console
+
+- Both "=" and "<-" can be used to assign values to variables
+
+```{r}
+# Example 1
+print("Hello world")
+
+# Example 2
+x <- 2
+y = 3
+z <- x + y
+```
+
