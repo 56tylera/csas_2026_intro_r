@@ -19,7 +19,7 @@ and [Positron](https://positron.posit.co/download.html)
 
 ## Outline
 
-- Why R?
+- R basics
 
 - R Syntax
 
@@ -36,3 +36,16 @@ and [Positron](https://positron.posit.co/download.html)
 - Intuitive syntax
 
 - User-created packages constantly provide new features
+
+## Positron and RStudio
+
+- Both Integrated Development Environments (IDEs) created
+by posit
+
+- RSudio is older, Positron released very recently
+
+- Both have 4 main sections
+  - Code editor
+  - Variables
+  - Console
+  - Plots
