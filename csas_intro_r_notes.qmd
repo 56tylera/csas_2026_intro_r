@@ -33,6 +33,7 @@ y = 3
 ```{r}
 # Example 3
 
+
 # Addition
 print(2 + 2)
 
@@ -51,4 +52,57 @@ print(x^2)
 print(x**2)
 ```
 
+## Data Structure Example Code
+
+```{r}
+# Example 4
+
+fav_color <- "black"
+
+print(fav_color)
+
+```
+
+```{r}
+# Example 5
+x <- TRUE
+
+print(x)
+
+
+# Used for conditionals
+
+if (x) {
+  print("Yes")
+}
+```
+
+```{r}
+# Example 6
+
+x <- 3.4
+y <- 4
+z <- 4L
+
+print(class(x))
+print(class(y))
+print(class(z))
+
+x <- as.integer(x)
+
+print(class(x))
+print(x)
+```
+
+## Local Data Example Code
+
+```{r}
+#Example 7
+
+# Creates the numerical data in the table
+tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
+
+# Labels the rows then the columns 
+dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("9th", "10th", "11th", "12th"))
+```
 
