@@ -56,11 +56,13 @@ by posit
 
 ```{r}
 #| echo: true
+#| eval: false
 # Example 1
 print("Hello world")
 ```
 ```{r}
 #| echo: true
+#| eval: false
 # Example 2
 x <- 2
 y = 3
@@ -76,10 +78,8 @@ y = 3
 
 ```{r}
 #| echo: true
-
+#| eval: false
 # Example 3
-
-
 # Addition
 print(2 + 2)
 
@@ -106,9 +106,10 @@ print(x**2)
   
   - Logical
   
+  - Integer
+  
   - Numeric
   
-  - Integer
   
 ## Character Data
 
@@ -120,6 +121,7 @@ print(x**2)
 
 ```{r}
 #| echo: true
+#| eval: false
 # Example 4
 
 fav_color <- "black"
@@ -137,6 +139,8 @@ print(fav_color)
 
 ```{r}
 #| echo: true
+#| eval: false
+
 # Example 5
 x <- TRUE
 
@@ -150,5 +154,29 @@ if (x) {
 }
 ```
 
+## Integer and Numeric Data
+
+- Numeric data is all real numbers, can be decimal or not
+
+- Integers are whole real numbers
+
+```{r}
+#| echo: true
+#| eval: false
+# Example 6
+
+x <- 3.4
+y <- 4
+z <- 4L
+
+print(class(x))
+print(class(y))
+print(class(z))
+
+x <- as.integer(x)
+
+print(class(x))
+print(x)
+```
 
 
