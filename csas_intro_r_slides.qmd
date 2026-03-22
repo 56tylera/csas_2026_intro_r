@@ -129,11 +129,11 @@ print(fav_color)
 ```
 
 
-
-
 ## Logical data
 
 - Also know as binary data, either TRUE or FALSE
+
+- TRUE and FALSE are not contained within quotes
 
 ```{r}
 #| echo: true
@@ -141,6 +141,13 @@ print(fav_color)
 x <- TRUE
 
 print(x)
+
+
+# Used for conditionals
+
+if (x) {
+  print("Yes")
+}
 ```
 
 
