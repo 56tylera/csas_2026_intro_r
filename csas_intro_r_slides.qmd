@@ -94,3 +94,14 @@ print(x^2)
 print(x**2)
 ```
 
+## Data Structure
+
+- Real data mostly consists of 4 types
+
+  - Logical
+  
+  - Numeric
+  
+  - Integer
+  
+  - Character
