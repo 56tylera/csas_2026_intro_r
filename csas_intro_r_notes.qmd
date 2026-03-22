@@ -1,0 +1,54 @@
+---
+title: "CSAS 2026 Intro to R Notes"
+author: "Tyler Adams"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    embed-resources: true
+    code-fold: true
+    theme: cosmo
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+Copy and paste code into the console, or click the 
+run button located in the corner of your code block 
+if you have the notes loaded in your IDE.
+
+## R Syntax Example Code
+```{r}
+# Example 1
+print("Hello world")
+```
+
+```{r}
+# Example 2
+x <- 2
+y = 3
+```
+
+```{r}
+# Example 3
+
+# Addition
+print(2 + 2)
+
+# Subtraction
+print(4 - 2)
+
+# Multiplication (variables can be used too)
+print(y * x)
+
+# Division
+print(x / 3)
+
+# Exponentiation
+print(x^2)
+# or
+print(x**2)
+```
+
+
