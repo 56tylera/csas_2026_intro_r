@@ -179,4 +179,22 @@ print(class(x))
 print(x)
 ```
 
+## Local Data
+
+- Data can be imputed directly into R
+
+- Tables can be useful for displaying data
+
+```{r}
+#| echo: true
+#| eval: false
+#Example 7
+
+# Creates the numerical data in the table
+tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
+
+# Labels the rows then the columns 
+dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("9th", "10th", "11th", "12th"))
+
+```
 
