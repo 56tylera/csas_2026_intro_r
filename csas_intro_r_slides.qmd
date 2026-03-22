@@ -76,6 +76,10 @@ y = 3
 
 ```{r}
 #| echo: true
+
+# Example 3
+
+
 # Addition
 print(2 + 2)
 
@@ -98,10 +102,46 @@ print(x**2)
 
 - Real data mostly consists of 4 types
 
+  - Character
+  
   - Logical
   
   - Numeric
   
   - Integer
   
-  - Character
+## Character Data
+
+- Text information
+
+  - Called strings in Python
+
+- Contained in "" or ''
+
+```{r}
+#| echo: true
+# Example 4
+
+fav_color <- "black"
+
+print(fav_color)
+
+```
+
+
+
+
+## Logical data
+
+- Also know as binary data, either TRUE or FALSE
+
+```{r}
+#| echo: true
+# Example 5
+x <- TRUE
+
+print(x)
+```
+
+
+
