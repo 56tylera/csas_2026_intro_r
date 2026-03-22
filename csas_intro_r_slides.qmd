@@ -52,17 +52,45 @@ by posit
 
 ## R syntax
 
-- Type code into Console
-
-- Both "=" and "<-" can be used to assign values to variables
+- Type code into console
 
 ```{r}
+#| echo: true
 # Example 1
 print("Hello world")
-
+```
+```{r}
+#| echo: true
 # Example 2
 x <- 2
 y = 3
-z <- x + y
+```
+
+- Both "=" and "<-" can be used to assign values to variables
+
+- Look at the variables window
+
+## R syntax, continued
+
+- Basic operation signs
+
+```{r}
+#| echo: true
+# Addition
+print(2 + 2)
+
+# Subtraction
+print(4 - 2)
+
+# Multiplication (variables can be used too)
+print(y * x)
+
+# Division
+print(x / 3)
+
+# Exponentiation
+print(x^2)
+# or
+print(x**2)
 ```
 
