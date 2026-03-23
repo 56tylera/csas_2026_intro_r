@@ -213,5 +213,27 @@ player_avg <- player_stats %>%
   summarise(avg_pts = mean(pts), tm = first(tm))
 ```
 
+## Visualizing LA Data
 
+```{r}
+# Creating histogram, binwidth sets the length of the bars
+ggplot(la_players, aes(pts)) +
+  geom_histogram(binwidth = 5)
+
+# Creating scatterplot, position_jitter spaces data
+ggplot(la_players, aes(data, pts, color = player)) +
+  geom_point(position = position_jitter(width = 0.2))
+```
+
+## Visualization Player Averages Data
+
+```{r}
+# Creating histogram, binwidth sets the length of the bars
+ggplot(player_avg, aes(avg_pts)) +
+  geom_histogram(binwidth = 2.5)
+
+# Creating scatterplot, shape linked to team
+ggplot(player_avg, aes(avg_mp, avg_pts, color = tm)) +
+  geom_point()
+```
 
