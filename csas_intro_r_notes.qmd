@@ -138,6 +138,7 @@ tab4
 ## Visualization Local Data
 
 ```{r}
+
 # A simple bar graph
 barplot(tab)
 
@@ -147,4 +148,16 @@ df_tab <- as.data.frame(tab)
 # Tidyverse subsection ggplots are cleaner
 ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
   geom_bar(stat = "identity", position = "fill")
+
 ```
+
+
+## Prexisting Data
+
+```{r}
+
+player_stats <- read.csv("nba_player_stats_24-25.csv")
+
+```
+
+
