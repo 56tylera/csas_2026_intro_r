@@ -135,3 +135,16 @@ tab4
 
 ```
 
+## Visualization Local Data
+
+```{r}
+# A simple bar graph
+barplot(tab)
+
+# Turning the table into a data frame
+df_tab <- as.data.frame(tab)
+
+# Tidyverse subsection ggplots are cleaner
+ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
+  geom_bar(stat = "identity", position = "fill")
+```
