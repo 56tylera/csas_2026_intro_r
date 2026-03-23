@@ -55,14 +55,12 @@ format:
 ```{r}
 #| echo: true
 #| eval: false
-# Example 1
 print("Hello world")
 ```
 
 ```{r}
 #| echo: true
 #| eval: false
-# Example 2
 x <- 2
 y = 3
 ```
@@ -78,7 +76,7 @@ y = 3
 ```{r}
 #| echo: true
 #| eval: false
-# Example 3
+
 # Addition
 print(2 + 2)
 
@@ -120,7 +118,6 @@ print(x**2)
 ```{r}
 #| echo: true
 #| eval: false
-# Example 4
 
 fav_color <- "black"
 
@@ -138,7 +135,6 @@ print(fav_color)
 #| echo: true
 #| eval: false
 
-# Example 5
 x <- TRUE
 
 print(x)
@@ -160,7 +156,6 @@ if (x) {
 ```{r}
 #| echo: true
 #| eval: false
-# Example 6
 
 x <- 3.4
 y <- 4
@@ -200,7 +195,6 @@ library(tidyverse)
 ```{r}
 #| echo: true
 #| eval: false
-#Example 7
 
 # Creates the numerical data in the table
 tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
@@ -220,11 +214,8 @@ tab
 ```
 ## Manipulating Local Data
 
-- We can display portions of the table
-
 ```{r}
 #| echo: true
-# Example 8
 
 # Only displays the first 2 columns
 tab2 <- tab[, 1:2]
@@ -234,7 +225,7 @@ tab2
 tab3 <- tab[1,]
 tab3
 
-# Create a new column avenging the 4 grades
-tab$average <- (tab$ninth + tab$tenth + tab$eleventh + tab$twelfth) / 4
-tab
+# Creates a new column avenging the grades by row
+tab4 <- cbind(tab, Average = rowMeans(tab))
+tab4
 ```
