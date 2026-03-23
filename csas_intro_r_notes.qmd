@@ -178,6 +178,21 @@ str(player_stats)
 # head() shows the first few rows
 head(player_stats)
 
+# Quick scatterplot to look for irregularities in the dating
+ggplot(player_stats, aes(Data, PTS)) +
+  geom_point() +
+  scale_x_discrete(breaks = range(player_stats$Data))
 ```
 
+## Clean Up
+
+```{r}
+# Turns variable names lowercase
+names(player_stats) <- tolower(names(player_stats))
+
+# Changes res variable into logical win variable
+player_stats <- player_stats %>%
+  mutate(win = Res == "W") %>%
+  select(-Res)
+```
 
