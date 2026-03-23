@@ -11,48 +11,46 @@ format:
 
 ## Prerequisites
 
-- A laptop with [R](https://cran.r-project.org/)
-and [Positron](https://positron.posit.co/download.html)
-/[RStudio](https://posit.co/download/rstudio-desktop/) installed
+-   A laptop with [R](https://cran.r-project.org/) and [Positron](https://positron.posit.co/download.html) /[RStudio](https://posit.co/download/rstudio-desktop/) installed
 
-- No experience needed
+-   No experience needed
 
 ## Outline
 
-- R basics
+-   R basics
 
-- R Syntax
+-   R Syntax
 
-- Data structure
+-   Data structure
 
-- Practical R uses
+-   Practical R uses
 
 ## Why R?
 
-- Runs on all major operating systems
+-   Runs on all major operating systems
 
-- Open source
+-   Open source
 
-- Intuitive syntax
+-   Intuitive syntax
 
-- User-created packages constantly provide new features
+-   User-created packages constantly provide new features
 
 ## Positron and RStudio
 
-- Both Integrated Development Environments (IDEs) created
-by posit
+-   Both Integrated Development Environments (IDEs) created by posit
 
-- RSudio is older, Positron released very recently
+-   RSudio is older, Positron released very recently
 
-- Both have 4 main sections
-  - Code editor
-  - Variables
-  - Console
-  - Plots
+-   Both have 4 main sections
+
+    -   Code editor
+    -   Variables
+    -   Console
+    -   Plots
 
 ## R syntax
 
-- Type code into console
+-   Type code into console
 
 ```{r}
 #| echo: true
@@ -60,6 +58,7 @@ by posit
 # Example 1
 print("Hello world")
 ```
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -68,13 +67,13 @@ x <- 2
 y = 3
 ```
 
-- Both "=" and "<-" can be used to assign values to variables
+-   Both "=" and "\<-" can be used to assign values to variables
 
-- Look at the variables window
+-   Look at the variables window
 
 ## R syntax, continued
 
-- Basic operation signs
+-   Basic operation signs
 
 ```{r}
 #| echo: true
@@ -100,24 +99,23 @@ print(x**2)
 
 ## Data Structure
 
-- Real data mostly consists of 4 types
+-   Real data mostly consists of 4 types
 
-  - Character
-  
-  - Logical
-  
-  - Integer
-  
-  - Numeric
-  
-  
+    -   Character
+
+    -   Logical
+
+    -   Integer
+
+    -   Numeric
+
 ## Character Data
 
-- Text information
+-   Text information
 
-  - Called strings in Python
+    -   Called strings in Python
 
-- Contained in "" or ''
+-   Contained in "" or ''
 
 ```{r}
 #| echo: true
@@ -130,12 +128,11 @@ print(fav_color)
 
 ```
 
-
 ## Logical data
 
-- Also know as binary data, either TRUE or FALSE
+-   Also know as binary data, either TRUE or FALSE
 
-- TRUE and FALSE are not contained within quotes
+-   TRUE and FALSE are not contained within quotes
 
 ```{r}
 #| echo: true
@@ -156,9 +153,9 @@ if (x) {
 
 ## Integer and Numeric Data
 
-- Numeric data is all real numbers, can be decimal or not
+-   Numeric data is all real numbers, can be decimal or not
 
-- Integers are whole real numbers
+-   Integers are whole real numbers
 
 ```{r}
 #| echo: true
@@ -172,6 +169,7 @@ z <- 4L
 print(class(x))
 print(class(y))
 print(class(z))
+print(z)
 
 x <- as.integer(x)
 
@@ -179,11 +177,25 @@ print(class(x))
 print(x)
 ```
 
+## R Packages
+
+- To use a package
+  - Install (Once)
+  - Load (Every time)
+
+- Tidyverse is widely used 
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+
 ## Local Data
 
-- Data can be imputed directly into R
+-   Data can be imputed directly into R
 
-- Tables can be useful for displaying data
+-   Tables can be useful for displaying data
 
 ```{r}
 #| echo: true
@@ -194,7 +206,35 @@ print(x)
 tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
 
 # Labels the rows then the columns 
-dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("9th", "10th", "11th", "12th"))
-
+dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth"))
 ```
 
+## Local Data (Image)
+
+```{r}
+# Since it's a new slide the table has to be remade before being rendered
+tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
+dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth"))
+
+tab
+```
+## Manipulating Local Data
+
+- We can display portions of the table
+
+```{r}
+#| echo: true
+# Example 8
+
+# Only displays the first 2 columns
+tab2 <- tab[, 1:2]
+tab2
+
+# Only displays the first row
+tab3 <- tab[1,]
+tab3
+
+# Create a new column avenging the 4 grades
+tab$average <- (tab$ninth + tab$tenth + tab$eleventh + tab$twelfth) / 4
+tab
+```
