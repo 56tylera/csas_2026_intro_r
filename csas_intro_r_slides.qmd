@@ -237,6 +237,7 @@ tab4
 ```{r}
 #| echo: true
 #| eval: false
+
 # A simple bar graph
 barplot(tab)
 
@@ -260,5 +261,20 @@ barplot(tab)
 df_tab <- as.data.frame(tab)
 ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
   geom_bar(stat = "identity", position = "fill")
+```
+
+## Prexisting Data
+
+- Data file needs to be in your current repository to be 
+accessed
+
+- Use setwd("path/to/repository") to change your current repository
+
+- Use getwd() to determine your current repository
+
+```{r}
+#| echo: true
+# A csv file can be imported via read.csv
+player_stats <- read.csv("nba_player_stats_24-25.csv")
 ```
 
