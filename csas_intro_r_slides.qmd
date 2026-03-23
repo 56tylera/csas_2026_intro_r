@@ -337,7 +337,7 @@ player_stats <- player_stats %>%
 - What if we only want to look at the Lakers players?
   - How many points have they scored so far?
 
-- What if we want to find the average points per game for each 
+- What if we want to find the average statistics for each 
 player?
 
 ```{r}
@@ -354,6 +354,44 @@ print(la_points)
 # group_by function combines rows, summarise creates variables based off the previous dataset's variables
 player_avg <- player_stats %>%
   group_by(player) %>%
-  summarise(avg_pts = mean(pts), tm = first(tm))
+  summarise(tm = first(tm), avg_pts = mean(pts), avg_mp = mean(mp), avg_trb = mean(trb), avg_ast = mean(ast))
 ```
+
+## Visualizing NBA Data
+
+- Using the la_players data frame
+  - Visualize total points scored per game
+  - Graph total points over time, differentiate each player
+
+- Using the player_avg
+  - Visualize average points per game
+  - Graph average points per game by average minutes played,
+  differentiate each team
+  
+## Visualizing LA Data
+
+- Visualizing total points scored per game
+  - One variable, numerical data -> histogram works well
+
+```{r}
+#| echo: true
+#| eval: false
+# Creating histogram, binwidth sets the length of the bars
+ggplot(la_players, aes(pts)) +
+  geom_histogram(binwidth = 5)
+
+```
+
+- Graphing total points over time, differentiating each player
+  - Three variables, two numerical, one categorical
+  - Scatterplot with extra variable linked to point color
+
+```{r}
+#| echo: true
+#| eval: false
+# Creating scatterplot
+ggplot(la_players, aes(data, pts, color = player)) +
+  geom_point(position = position_jitter(width = 0.2))
+```
+
 
