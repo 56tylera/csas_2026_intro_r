@@ -278,3 +278,20 @@ accessed
 player_stats <- read.csv("nba_player_stats_24-25.csv")
 ```
 
+## First Look
+
+- Displays the stats of every player for every game
+
+- One observation (row) is one player's personal record for a 
+specific game
+
+```{r}
+#| echo: true
+#| eval: false
+# str() gives a helpful overview
+str(player_stats)
+
+# head() shows the first few rows
+head(player_stats)
+```
+
