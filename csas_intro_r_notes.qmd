@@ -26,7 +26,7 @@ R download: https://cran.r-project.org/
 Positron download: https://positron.posit.co/download.html
 RStudio download: https://posit.co/download/rstudio-desktop/
 
-## R Syntax Example Code
+## R Syntax
 ```{r}
 
 print("Hello world")
@@ -61,7 +61,7 @@ print(x**2)
 
 ```
 
-## Data Structure Example Code
+## Data Structure
 
 ```{r}
 
@@ -112,7 +112,7 @@ library(tidyverse)
 
 ```
 
-## Local Data Example Code
+## Local Data
 
 ```{r}
 
@@ -168,7 +168,7 @@ player_stats <- read.csv("nba_player_stats_24-25.csv")
 
 ```
 
-## First Look
+## First Look at NBA Data
 
 ```{r}
 
@@ -184,7 +184,7 @@ ggplot(player_stats, aes(Data, PTS)) +
   scale_x_discrete(breaks = range(player_stats$Data))
 ```
 
-## Clean Up
+## NBA Data Clean Up
 
 ```{r}
 # Turns variable names lowercase
@@ -195,4 +195,23 @@ player_stats <- player_stats %>%
   mutate(win = Res == "W") %>%
   select(-Res)
 ```
+
+## Manipulating NBA Data
+
+```{r}
+# Filtering the data to only show the Lakers players
+la_players <- player_stats %>%
+  filter(tm == "LAL")
+
+# Adding up total points scored variable
+la_points <- sum(la_players$pts)
+print(la_points)
+
+# group_by function combines rows, summarise creates variables based off the previous dataset's variables
+player_avg <- player_stats %>%
+  group_by(player) %>%
+  summarise(avg_pts = mean(pts), tm = first(tm))
+```
+
+
 
