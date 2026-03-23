@@ -285,6 +285,9 @@ player_stats <- read.csv("nba_player_stats_24-25.csv")
 - One observation (row) is one player's personal record for a 
 specific game
 
+- Variable descriptions can be found 
+[here](https://www.kaggle.com/datasets/eduardopalmieri/nba-player-stats-season-2425)
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -293,5 +296,39 @@ str(player_stats)
 
 # head() shows the first few rows
 head(player_stats)
+
+# Quick scatterplot to look for irregularities in the dating
+ggplot(player_stats, aes(Data, PTS)) +
+  geom_point() +
+  scale_x_discrete(breaks = range(player_stats$Data))
+```
+
+## First Look (Image)
+
+```{r}
+# The expand command isn't relevant so I didn't show it in the last slide, but it gives the graph some breathing room on the side
+ggplot(player_stats, aes(Data, PTS)) +
+  geom_point() +
+  scale_x_discrete(breaks = range(player_stats$Data), expand = expansion(mult = c(0, 0.05)))
+```
+
+
+## Clean Up
+
+- We prefer variable names to be all lowercase
+
+- The Res variable should be logical
+
+
+```{r}
+#| echo: true
+#| eval: false
+# Turns variable names lowercase
+names(player_stats) <- tolower(names(player_stats))
+
+# Changes res variable into logical win variable
+player_stats <- player_stats %>%
+  mutate(win = Res == "W") %>%
+  select(-Res)
 ```
 
