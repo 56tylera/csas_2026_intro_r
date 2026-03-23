@@ -474,12 +474,16 @@ ggplot(player_avg, aes(avg_mp, avg_pts, color = tm)) +
 
 ## Scatterplot Questions
 
-- How can we add a trendline to this graph?
+- How can we add a trend line to this graph?
 
 - What portion of this data would it be helpful to focus on?
   - How can we do that?
   
 - How can we clean up the graph labels?
+
+## Thank You!
+
+- Any remaining questions?
 
 
 
