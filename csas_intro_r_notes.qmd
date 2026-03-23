@@ -14,9 +14,17 @@ editor:
     wrap: 72
 ---
 
+## Note
+
 Copy and paste code into the console, or click the 
 run button located in the corner of your code block 
 if you have the notes loaded in your IDE.
+
+## Prerequisites
+
+R download: https://cran.r-project.org/
+Positron download: https://positron.posit.co/download.html
+RStudio download: https://posit.co/download/rstudio-desktop/
 
 ## R Syntax Example Code
 ```{r}
@@ -157,6 +165,18 @@ ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
 ```{r}
 
 player_stats <- read.csv("nba_player_stats_24-25.csv")
+
+```
+
+## First Look
+
+```{r}
+
+# str() gives a helpful overview
+str(player_stats)
+
+# head() shows the first few rows
+head(player_stats)
 
 ```
 
