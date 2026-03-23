@@ -94,6 +94,13 @@ print(class(x))
 print(x)
 ```
 
+## R Packages
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
 ## Local Data Example Code
 
 ```{r}
@@ -104,5 +111,20 @@ tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
 
 # Labels the rows then the columns 
 dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("9th", "10th", "11th", "12th"))
+```
+
+
+## Manipulating Local Data
+
+```{r}
+# Example 8
+
+# Only displays the first 2 columns
+tab2 <- tab[, 1:2]
+tab2
+
+# Only displays the first row
+tab3 <- tab[1,]
+tab3
 ```
 
