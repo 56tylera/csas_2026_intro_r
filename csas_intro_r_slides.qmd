@@ -389,9 +389,35 @@ ggplot(la_players, aes(pts)) +
 ```{r}
 #| echo: true
 #| eval: false
-# Creating scatterplot
+# Creating scatterplot, position_jitter spaces data
 ggplot(la_players, aes(data, pts, color = player)) +
   geom_point(position = position_jitter(width = 0.2))
 ```
 
+## Visualizing LA Data (Image)
 
+```{r}
+ggplot(la_players, aes(pts)) +
+  geom_histogram(binwidth = 5)
+```
+
+## Histogram Questions
+
+- What happens if we change the binwidth?
+
+- Can we swap binwidth out with anything?
+
+- What other variables can we make histograms with?
+
+## Visualizing LA Data (Another Image)
+
+```{r}
+ggplot(la_players, aes(data, pts, color = player)) +
+  geom_point(position = position_jitter(width = 0.2))
+```
+
+## Scatterplot Questions
+
+- What happens if we take out position_jitter?
+
+- Can we focus on just a portion of the data?
