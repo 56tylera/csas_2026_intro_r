@@ -197,7 +197,7 @@ library(tidyverse)
 #| eval: false
 
 # Creates the numerical data in the table
-tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
+tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 530)))
 
 # Labels the rows then the columns 
 dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth"))
@@ -207,7 +207,7 @@ dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "el
 
 ```{r}
 # Since it's a new slide the table has to be remade before being rendered
-tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 5930)))
+tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 530)))
 dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth"))
 
 tab
@@ -229,3 +229,36 @@ tab3
 tab4 <- cbind(tab, Average = rowMeans(tab))
 tab4
 ```
+
+## Visualizing Local Data
+
+- A bar graph is the best option to visualize this data
+
+```{r}
+#| echo: true
+#| eval: false
+# A simple bar graph
+barplot(tab)
+
+# Turning the table into a data frame
+df_tab <- as.data.frame(tab)
+
+# Tidyverse subsection ggplots are cleaner
+ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
+  geom_bar(stat = "identity", position = "fill")
+```
+
+## Visualizing Local Data (Image)
+
+```{r}
+barplot(tab)
+```
+
+## Visualizing Local Data (Another Image)
+
+```{r}
+df_tab <- as.data.frame(tab)
+ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
+  geom_bar(stat = "identity", position = "fill")
+```
+
