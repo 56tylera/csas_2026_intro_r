@@ -192,8 +192,8 @@ names(player_stats) <- tolower(names(player_stats))
 
 # Changes res variable into logical win variable
 player_stats <- player_stats %>%
-  mutate(win = Res == "W") %>%
-  select(-Res)
+  mutate(win = res == "W") %>%
+  select(-res)
 ```
 
 ## Manipulating NBA Data
@@ -207,10 +207,13 @@ la_players <- player_stats %>%
 la_points <- sum(la_players$pts)
 print(la_points)
 
-# group_by function combines rows, summarise creates variables based off the previous dataset's variables
+# group_by function combines rows
+# summarize creates variables based off the previous dataset's variables
 player_avg <- player_stats %>%
   group_by(player) %>%
-  summarise(avg_pts = mean(pts), tm = first(tm))
+  summarise(
+    tm = first(tm), avg_pts = mean(pts), avg_mp = mean(mp), avg_trb = mean(trb), avg_ast = mean(ast)
+    )
 ```
 
 ## Visualizing LA Data
