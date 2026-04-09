@@ -278,6 +278,14 @@ accessed
 player_stats <- read.csv("nba_player_stats_24-25.csv")
 ```
 
+## Finding a Dataset
+
+ - Countless datasets are available for download online
+ 
+ - Quality statistical analysis is dependent on quality data
+ 
+ - The data we will be using is from the website Kaggle, found [here](https://www.kaggle.com/datasets/eduardopalmieri/nba-player-stats-season-2425)
+
 ## First Look at NBA Data
 
 - Displays the stats of every player for every game
