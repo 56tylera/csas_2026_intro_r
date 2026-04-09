@@ -11,7 +11,10 @@ format:
 
 ## Prerequisites
 
--   A laptop with [R](https://cran.r-project.org/) and [Positron](https://positron.posit.co/download.html) /[RStudio](https://posit.co/download/rstudio-desktop/) installed
+-   A laptop with:
+  - [R](https://cran.r-project.org/)
+  - [Positron](https://positron.posit.co/download.html)
+      - Or [RStudio](https://posit.co/download/rstudio-desktop/)
 
 -   No experience needed
 
