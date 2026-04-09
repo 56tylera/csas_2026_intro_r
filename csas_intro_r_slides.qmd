@@ -1,5 +1,5 @@
 ---
-title: "Intro to R"
+title: "Introduction to R"
 subtitle: "CSAS 2026"
 author: "Tyler Adams"
 format:
@@ -484,6 +484,9 @@ ggplot(player_avg, aes(avg_mp, avg_pts, color = tm)) +
 ## Thank You!
 
 - Any remaining questions?
+
+- Email:
+  - tyler.adams@uconn.edu
 
 
 
