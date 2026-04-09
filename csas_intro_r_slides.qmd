@@ -200,7 +200,9 @@ library(tidyverse)
 tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 530)))
 
 # Labels the rows then the columns 
-dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth"))
+dimnames(tab) <- list(
+  c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth")
+  )
 ```
 
 ## Local Data (Image)
@@ -208,7 +210,9 @@ dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "el
 ```{r}
 # Since it's a new slide the table has to be remade before being rendered
 tab <- as.table(rbind(c(762, 327, 468, 593), c(484, 239, 477, 530)))
-dimnames(tab) <- list(c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth"))
+dimnames(tab) <- list(
+  c("Honors", "Not Honors"), Grade = c("ninth", "tenth", "eleventh", "twelfth")
+  )
 
 tab
 ```
@@ -314,10 +318,12 @@ ggplot(player_stats, aes(Data, PTS)) +
 ## First Look at NBA Data (Image)
 
 ```{r}
-# The expand command isn't relevant so I didn't show it in the last slide, but it gives the graph some breathing room on the side
+# Expand command makes the graph more pleasant
 ggplot(player_stats, aes(Data, PTS)) +
   geom_point() +
-  scale_x_discrete(breaks = range(player_stats$Data), expand = expansion(mult = c(0, 0.05)))
+  scale_x_discrete(
+    breaks = range(player_stats$Data), expand = expansion(mult = c(0, 0.05))
+    )
 ```
 
 
@@ -357,7 +363,8 @@ la_players <- player_stats %>%
 la_points <- sum(la_players$pts)
 print(la_points)
 
-# group_by function combines rows, summarise creates variables based off the previous dataset's variables
+# group_by function combines rows
+# summarize creates variables based off the previous dataset's variables
 player_avg <- player_stats %>%
   group_by(player) %>%
   summarise(tm = first(tm), avg_pts = mean(pts), avg_mp = mean(mp), avg_trb = mean(trb), avg_ast = mean(ast))
