@@ -7,15 +7,19 @@ format:
         slide-number: true
         preview-links: true
         theme: default
+output:
+  ioslides_presentation:
+    css: style.css
+    widescreen: yes
+  beamer_presentation: default
 ---
 
 ## Prerequisites
 
 -   A laptop with:
-  - [R](https://cran.r-project.org/)
-  - [Positron](https://positron.posit.co/download.html)
-      - Or [RStudio](https://posit.co/download/rstudio-desktop/)
-
+    -   [R](https://cran.r-project.org/)
+    -   [Positron](https://positron.posit.co/download.html)
+        -   Or [RStudio](https://posit.co/download/rstudio-desktop/)
 -   No experience needed
 
 ## Outline
@@ -177,17 +181,15 @@ print(x)
 
 ## R Packages
 
-- To use a package
-  - Install (Once)
-  - Load (Every time)
-
-- Tidyverse is widely used 
+-   To use a package
+    -   Install (Once)
+    -   Load (Every time)
+-   Tidyverse is widely used
 
 ```{r}
 #install.packages("tidyverse")
 library(tidyverse)
 ```
-
 
 ## Local Data
 
@@ -219,6 +221,7 @@ dimnames(tab) <- list(
 
 tab
 ```
+
 ## Manipulating Local Data
 
 ```{r}
@@ -239,7 +242,7 @@ tab4
 
 ## Visualizing Local Data
 
-- A bar graph is the best option to visualize this data
+-   A bar graph is the best option to visualize this data
 
 ```{r}
 #| echo: true
@@ -272,12 +275,11 @@ ggplot(df_tab, aes(x = Grade, y = Freq, fill = Var1)) +
 
 ## Prexisting Data
 
-- Data file needs to be in your current repository to be 
-accessed
+-   Data file needs to be in your current repository to be accessed
 
-- Use setwd("path/to/repository") to change your current repository
+-   Use setwd("path/to/repository") to change your current repository
 
-- Use getwd() to determine your current repository
+-   Use getwd() to determine your current repository
 
 ```{r}
 #| echo: true
@@ -287,21 +289,19 @@ player_stats <- read.csv("nba_player_stats_24-25.csv")
 
 ## Finding a Dataset
 
- - Countless datasets are available for download online
- 
- - Quality statistical analysis is dependent on quality data
- 
- - The data we will be using is from the website Kaggle, found [here](https://www.kaggle.com/datasets/eduardopalmieri/nba-player-stats-season-2425)
+-   Countless datasets are available for download online
+
+-   Quality statistical analysis is dependent on quality data
+
+-   The data we will be using is from the website Kaggle, found [here](https://www.kaggle.com/datasets/eduardopalmieri/nba-player-stats-season-2425)
 
 ## First Look at NBA Data
 
-- Displays the stats of every player for every game
+-   Displays the stats of every player for every game
 
-- One observation (row) is one player's personal record for a 
-specific game
+-   One observation (row) is one player's personal record for a specific game
 
-- Variable descriptions can be found 
-[here](https://www.kaggle.com/datasets/eduardopalmieri/nba-player-stats-season-2425)
+-   Variable descriptions can be found [here](https://www.kaggle.com/datasets/eduardopalmieri/nba-player-stats-season-2425)
 
 ```{r}
 #| echo: true
@@ -329,13 +329,11 @@ ggplot(player_stats, aes(Data, PTS)) +
     )
 ```
 
+## NBA Data Clean Up
 
-## NBA Data Clean Up 
+-   We prefer variable names to be all lowercase
 
-- We prefer variable names to be all lowercase
-
-- The Res variable should be logical
-
+-   The Res variable should be logical
 
 ```{r}
 #| echo: true
@@ -350,11 +348,9 @@ player_stats <- player_stats %>%
 
 ## Manipulating NBA Data
 
-- What if we only want to look at the Lakers players?
-  - How many points have they scored so far?
-
-- What if we want to find the average statistics for each 
-player?
+-   What if we only want to look at the Lakers players?
+    -   How many points have they scored so far?
+-   What if we want to find the average statistics for each player?
 
 ```{r}
 #| echo: true
@@ -375,19 +371,17 @@ player_avg <- player_stats %>%
 
 ## Visualizing NBA Data
 
-- Using the la_players data frame
-  - Visualize total points scored per game
-  - Graph total points over time, differentiate each player
+-   Using the la_players data frame
+    -   Visualize total points scored per game
+    -   Graph total points over time, differentiate each player
+-   Using the player_avg
+    -   Visualize average points per game
+    -   Graph average points per game by average minutes played, differentiate each team
 
-- Using the player_avg
-  - Visualize average points per game
-  - Graph average points per game by average minutes played,
-  differentiate each team
-  
 ## Visualizing LA Data
 
-- Visualizing total points scored per game
-  - One variable, numerical data -> histogram works well
+-   Visualizing total points scored per game
+    -   One variable, numerical data -\> histogram works well
 
 ```{r}
 #| echo: true
@@ -397,9 +391,9 @@ ggplot(la_players, aes(pts)) +
   geom_histogram(binwidth = 5)
 ```
 
-- Graphing total points over time, differentiating each player
-  - Three variables, two numerical, one categorical
-  - Scatterplot with extra variable linked to point color
+-   Graphing total points over time, differentiating each player
+    -   Three variables, two numerical, one categorical
+    -   Scatterplot with extra variable linked to point color
 
 ```{r}
 #| echo: true
@@ -418,11 +412,11 @@ ggplot(la_players, aes(pts)) +
 
 ## Histogram Questions
 
-- What happens if we change the binwidth?
+-   What happens if we change the binwidth?
 
-- Can we swap binwidth out with anything?
+-   Can we swap binwidth out with anything?
 
-- What other variables can we make histograms with?
+-   What other variables can we make histograms with?
 
 ## Visualizing LA Data (Another Image)
 
@@ -433,30 +427,30 @@ ggplot(la_players, aes(data, pts, color = player)) +
 
 ## Scatterplot Questions
 
-- What happens if we take out position_jitter?
+-   What happens if we take out position_jitter?
 
-- Can we focus on just a portion of the data?
-  - Hint: filter()
-  
-- How can we clean up the x axis ticks?
+-   Can we focus on just a portion of the data?
+
+    -   Hint: filter()
+
+-   How can we clean up the x axis ticks?
 
 ## Visualizing Player Averages Data
 
-- Visualizing average points per game
-  - One variable, numerical data -> histogram works well
-  
+-   Visualizing average points per game
+    -   One variable, numerical data -\> histogram works well
+
 ```{r}
 #| echo: true
 #| eval: false
 # Creating histogram, binwidth sets the length of the bars
 ggplot(player_avg, aes(avg_pts)) +
   geom_histogram(binwidth = 2.5)
-```  
+```
 
-- Graphing average points per game by average minutes played,
-  while differentiating between teams
-  - Three variables, two numerical, one categorical
-  - Scatterplot with extra variable linked to point color
+-   Graphing average points per game by average minutes played, while differentiating between teams
+    -   Three variables, two numerical, one categorical
+    -   Scatterplot with extra variable linked to point color
 
 ```{r}
 #| echo: true
@@ -476,11 +470,11 @@ ggplot(player_avg, aes(avg_pts)) +
 
 ## Histogram Questions
 
-- Does this binwidth work well for the data?
+-   Does this binwidth work well for the data?
 
-- Would this look cleaner with a specific amount of bins?
+-   Would this look cleaner with a specific amount of bins?
 
-- What variables in this data set might have a similar distribution?
+-   What variables in this data set might have a similar distribution?
 
 ## Visualizing Player Averages Data (Another Image)
 
@@ -492,19 +486,18 @@ ggplot(player_avg, aes(avg_mp, avg_pts, color = tm)) +
 
 ## Scatterplot Questions
 
-- How can we add a trend line to this graph?
+-   How can we add a trend line to this graph?
 
-- What portion of this data would it be helpful to focus on?
-  - How can we do that?
-  
-- How can we clean up the graph labels?
+-   What portion of this data would it be helpful to focus on?
+
+    -   How can we do that?
+
+-   How can we clean up the graph labels?
 
 ## Thank You!
 
-- Any remaining questions?
+-   Any remaining questions?
 
-- Email:
-  - tyler.adams@uconn.edu
+-   Email:
 
-
-
+    -   tyler.adams\@uconn.edu
